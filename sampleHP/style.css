@@ -1,0 +1,130 @@
+body {
+  font-family: "Source Sans Pro", "Hiragino kaku Gothic ProN", Meiryo, Arial, sans-serif;
+}
+ P {
+  font-size: 15px;
+  padding: 0 10px 0 0;
+  margin: 0;
+ }
+
+ /* ナビゲーションスタイル */
+ body {
+  width: 960px;
+  margin: 0 auto 0 auto;
+  background-color: #e8e5da
+ }
+
+ 
+ #head1 {
+  display: flex;
+  justify-content: space-between;
+ }
+
+ #logo {
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  margin: 0px auto 0px auto;
+ }
+ #logo > span {
+  font-size: 12px;
+  font-weight: normal;
+ }
+ h6 {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 20px  0 0 0;
+ }
+
+ #nav-main {
+  text-align: right;
+  list-style: none;
+  text-decoration: none;
+  width: 75%;
+  margin: 0 auto 0 auto;
+ }
+
+ .link {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  height: 50px;
+  padding: 20px 10px 10px 10px;
+  font-size: 12px ;
+ }
+
+ .link:hover {
+  background-color: skyblue;
+ }
+ .link1:visited {
+  color: black;
+ }
+
+.link > a > span {
+  font-size: 10px;
+  color: gray;
+
+ }
+
+ .link1 {
+  text-decoration: none;
+ }
+
+
+ .sub-m {
+  display: none;
+ }
+ .sub-m:hover {
+  display: block;
+ }
+
+ #parent {
+  display: flex;
+ }
+
+ h3 {
+  font-size: 14px;
+  border-top: solid thin gray;
+  border-bottom: solid 1px gray;
+  width: 90%;
+  padding: 10px 0 10px 0  ;
+ }
+
+ #h2_kasen {
+  border-bottom: solid 1px gray;
+  margin: 50px auto 30px auto;
+  padding: 0 0 20px 0;
+ }
+
+ #parent3 {
+  display: flex;
+ }
+
+ .shousai {
+  font-size: 12px;
+  text-decoration: none;
+  border-radius: 3px;
+  color: white;
+  background-color: #999;
+  padding: 0 3px 0 3px;
+ }
+
+ #footer1 {
+  display: flex;
+  margin: 100px auto 50px auto;
+ }
+
+ .ft1 {
+  width: 100%;
+ }
+.p1 {
+  margin: 0 0 0 0;
+}
+ #spanft {
+  font-size: 20px;
+  font-weight: bold;
+ }
+
