@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>「ポ」「プ」「テ」「ピピック」をランダムに出力して「ポプテピピック」が完成したら竹●房を破壊するJavaScript</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        p#popuko {font-family: "ＭＳ Ｐゴシック",sans-serif; }
+    </style>
+</head>
+<body>
+    <h1>「ポ」「プ」「テ」「ピピック」をランダムに出力して「ポプテピピック」が完成したら竹●房を破壊するJavaScript</h1>
+    <p>自分= <a href='https://twitter.com/salty_7'>@salty_7</a></p>
+    <p><a href='http://miyayuu.starfree.jp/pptp2.htm'>ハードモード</a> by <a href="https://twitter.com/yuu1111main/status/978574105359237120" target="_blank">@yuu1111main</a></p>
+    <p>ここが最新版→<a href='https://toliner.github.io/gen_pptp/index.html'>ハードモードその２</a> by <a href="https://twitter.com/toliner_/status/978610911618347010" target="_blank">@toliner_</a> <a href='https://github.com/toliner/gen_pptp'>github</a>でホストされました</p>
+    <p><a href='http://keitan0505.html.xdomain.jp/pptp/pptp.html'>ハードモードその３</a> by <a href="https://twitter.com/0505Keitan/status/978640491519475712" target="_blank">@0505Keitan</a></p>
+    <p>作成過程が、<a href="https://twitter.com/i/moments/978984876840910849">Twitterのモーメント</a>でまとめられました。</p>
+    <p><a href='bbnm.html'>新コーナー</a></p>
+    <hr>
+    <p>
+    変更履歴：<br>
+    2018/03/26 02:00  初版公開<br>
+    2018/03/28 20:00  lang=jaに修正。ボタン連打対策。自動スクロール実装。<br>
+    2018/03/29 00:50  github, twitterのモーメント追加。以降はgithubで。
+    </p>
+    <hr>
+    <p>リセット＝F5</p>
+    <button id='bkb'>クリックしてね！</button>
+    <p id='pipimi'>ここに結果が表示されるよ！</p>
+    <p id='popuko'></p>
+    <script>
+        // ソースコード公開も目的なのでpptp.jsは作らずここに書いていくスタイル
+
+        const team = ['ポ', 'プ', 'テ', 'ピピック'];
+        // ↓この辺最高に汚い
+        const take = '\
+　　　　　　　　　　　　　　　　　　　　　　　　　-------　､　ｒへ------､ <br>\
+　　　　　　　　　　　　　　　　　　 ＿__､+\'\'"~　八 　　　　　~\'\'＜ つ　　　＼ <br>\
+　　　　　　　　　　　　　　 _､+\'\'"~　 ./ ,:　　　　＾ 　 丶　　　　　ヽく＿＿　∧ <br>\
+　　　　　　 , -r-　　　　 / 　 　 　 / / -､　　　　\'´￣!＼‘,　‘:,　 |　　　 ＼/ <br>\
+　　　　　／ .∧　　 ＼..ﾞ|/＿,,.｡*\'/ /|,\/＼＿_／^ヽ /,,_　`! 　 \',　| <br>\
+　　　 ／　　　∧　　　 ＼　〈〉.　,　.|　ｙ\'\'"ヽ______ 7´⌒ヽ _|　　ト;′ <br>\
+　　 〈　　　　　 ∧ （竹） .∨...　｜｜ ,r　ヽ 三三/　　‘:, Y!　 .|,′ <br>\
+　　　∨ 　 　 　 ∧　　　　∨...　|　.|八 °,!三三{.　° ﾉ 八　/---､ <br>\
+.　　　 ∨ 　 　 　 ∧　　　　∨....∨（.＾ 　　 ､_,､_, \`　　　,.ｨ^!./＿　　\', <br>\
+　　　　 ∨　　 ／三ﾐメ、　　∨　冫≧=‐------‐ｧ=≦/ .|/　　 } 　 ! <br>\
+.　　　 　 ∨三三三三圦__.＼＼/　＼|ｲ `\'\'＜:＼/:::::／　　|　　（＿__） <br>\
+　　　 〈〉　　 ノ　ゞ三ｼ.　＼　＼;　　 { /　　　 ｀¨ﾍ⌒こフ　.∨ 〔､､､_） <br>\
+　　　　　　　）　　　 　 　 　 ＼八　　`^i､_ __　　　 ＼＼　　 .∨ ｀¨´ <br>\
+　　　　 ＜ﾍ＿/三＼＿／｜＼､.＼　/::/　 ）　　　　 `\'´　＿ ,∨､ <br>\
+　　　　|＼三三三三:／　　|.　　＼/^ゞク≦---‐=≦::::::「:::::::::|::::/ <br>\
+　　　　　　　　 　 　 　 　 　 　 　 /:::::::/:::::::/:::::::::;′:::::::::|::::::::::|:人<br>\
+happy end!!\n\
+';
+
+        function pptp(){
+            var pipimi = document.getElementById('pipimi');
+            pipimi.textContent = '';
+            var popuko = document.getElementById('popuko');
+            popuko.textContent = '';
+            var syota = document.getElementById('bkb');
+            syota.disabled = true;  // 処理中はボタンを非アクティブにする
+            var pop = setInterval(function(){
+                pipimi.textContent += team[getRandomInt(0, 3)];
+                if(pipimi.textContent.endsWith('ポプテピピック')){
+                    clearInterval(pop);
+                    popuko.innerHTML = take;
+                    syota.disabled = false;
+                }
+                // 最下部にスクロールする
+                document.documentElement.scrollTop = document.body.scrollHeight;
+            }, 10);
+        }
+
+        function getRandomInt(min, max){
+            return Math.floor( Math.random() * (max - min + 1) ) + min;
+        }
+
+        document.getElementById('bkb').addEventListener('click', pptp);
+    </script>
+</body>
+</html>
