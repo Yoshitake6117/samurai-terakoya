@@ -1,0 +1,36 @@
+body {
+  margin: 0 auto 0 auto;
+  padding: 0;
+  background-color: orange;
+  height: 1500px;
+}
+
+div {
+  width: 100%;
+  text-align: center;
+  height: 1500px;
+}
+ h1 {
+  text-align: center;
+  margin: 0;
+ }
+
+ .fadein-char {
+  opacity: 0;
+  transform: translateX(200%);
+  transition: opacity 1s, transform 1s;
+  color: white;
+ }
+
+ .fadein-img {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1s, transform 1s;
+ }
+
+ .fadein-after {
+  opacity: 1;
+  transform: translate(0%);
+ }
+
+
