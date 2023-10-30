@@ -1,0 +1,72 @@
+
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  color: black;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+
+}
+
+.employees {
+  box-sizing: border-box;
+  min-height: calc(100vh-7rem);
+  padding: 28px 0 56px 0;
+}
+
+.employees h1 {
+  margin: 0 0 1.75rem;
+  font-size: 1.75rem;
+}
+
+.employee-table {
+  width: 100%;
+  margin: 0 auto;
+  word-break: break-all;
+  border-collapse: collapse;
+  border: solid 5px grey;
+  text-align: center;
+}
+
+.employee-table th,
+.employee-table td {
+  border: solid 3px grey;
+  padding: 1rem 0.75rem 1rem 0;
+  text-align: center;
+}
+
+.employee-table th:first-child,
+.employee-table td:first-child {
+  padding: 1rem 0.75rem;
+  text-align: center;
+}
+
+/* detail.php */
+.employee-detail {
+  border: solid 3px darkolivegreen;
+  padding: 1rem 0.75rem 1rem 0;
+  text-align: left;
+}
+
+.detail li {
+  font-size: 28px;
+  list-style: none;
+  margin: 20px 0 0 30px;
+}
+
+.detail li:last-child {
+  font-size: 28px;
+  list-style: none;
+  margin: 20px 0 0 30px;
+  height: 200px;
+}
+
+.back {
+  font-size: 20px;
+  color: green;
+  text-align: right;
+}
+
